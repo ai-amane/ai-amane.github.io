@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIあまね｜Claude Code に声で頼める、PC に住む音声 AI 秘書</title>
+<meta name="description" content="AIあまね は、自分の PC で動く日本語の音声 AI 秘書です。「あまね」と呼んで作業を頼むと、裏で Claude Code が作業をして、終わったら声で知らせます。使うには Claude の有料プラン（Pro 以上）が要ります。本体は MIT ライセンスで GitHub に公開しています。">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">AIあまね</header>
+
+<main>
+
+<section class="hero" id="top">
+  <a class="demo" href="https://www.youtube.com/shorts/zTH8ZGLZojQ" aria-label="実演の動画を YouTube で見る">
+    <img src="demo-thumb.jpg" width="540" height="960" alt="声で頼んだら、待ってる間にゲームができてた（実演の動画のサムネイル）">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+  <p class="caption">実演の動画（YouTube のショートが開きます。25 秒）。声で「星をよけるゲーム」を頼み、Claude Code が約 9 分で作りました。キャラクターは AI で作った絵、声は合成音声です。あまね の画面と返事は本物の録画で、待ち時間は早送りしています。</p>
+
+  <h1>Claude Code に声で頼んで、終わったら声で知らせてもらう。</h1>
+  <p class="lead">AIあまね は、あなたの PC に住む音声 AI 秘書です。</p>
+  <p>「あまね」と呼んで作業を頼むと、裏で Claude Code が作業をして、終わったら「お待たせしました」と声で知らせます。待っているあいだは、あまね と話していても、ほかのことをしていてもかまいません。</p>
+
+  <div class="cta">
+    <a class="btn" href="https://note.com/aiamane_official/n/nca585ed36287">
+      <strong>迷わず入れる手順書を読む</strong>
+      <span>有料 note・¥2,980</span>
+    </a>
+    <a class="btn warm" href="https://line.me/R/ti/p/@472styfk">
+      <strong>導入サポートを相談する</strong>
+      <span>第 1 期は 10 件だけ・モニター価格 ¥4,980（LINE のトークで 1 回 60 分）。友だち追加して「サポート」と送ってください</span>
+    </a>
+    <a class="btn plain" href="https://github.com/ai-amane/ai-amane/releases/latest">
+      <strong>自分で無料で始める</strong>
+      <span>GitHub から入れる</span>
+    </a>
+  </div>
+  <p class="fine">本体は MIT ライセンスで公開しています。使うには Claude の有料プラン（Pro 以上）が要ります。</p>
+</section>
+
+<section id="benefits">
+  <h2>こんな面倒が消えます</h2>
+  <p><strong>Claude Code を使っている人へ</strong></p>
+  <div class="card">
+    <h3>生成を待つあいだ、画面に張り付かなくていい</h3>
+    <p>頼んだ作業が終わったら、あまね が声で知らせます。進み具合は、画面の「作業」の欄に出ます。</p>
+  </div>
+  <div class="card">
+    <h3>手がふさがっていても、声で頼める</h3>
+    <p>「あまね」と呼んで、そのまま話すだけ。作業を始める前に画面に確認が出るので、「お願い」と言うか、ボタンを押します。</p>
+  </div>
+  <div class="card">
+    <h3>できたものを、その場で画面に出せる</h3>
+    <p>作ったページや画像、PDF、表を、あまね の画面に出します。作ったゲームや動くページは、その場で触れます。</p>
+  </div>
+  <div class="card">
+    <h3>PC の前を離れても</h3>
+    <p>家の Wi-Fi のタブレットやスマホを、あまね のマイクとスピーカーにできます（任意）。そこから頼んだ作業は、その画面で知らせます。</p>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>頼んでから、報告まで</h2>
+  <ol>
+    <li>「あまね、〇〇を作って」と頼みます。</li>
+    <li>画面に確認が出ます。「お願い」と言うか、ボタンを押すと始まります（確認の出し方は設定で変えられます）。</li>
+    <li>裏で Claude Code が作業します。軽い作業は Sonnet、重い作業は Opus が受け持ちます。</li>
+    <li>そのあいだも、あまね と話せます。調べもの、雑談、タイマーも声で。</li>
+    <li>終わったら「お待たせしました」と声で報告します。できたものは「画面に出して」で見られます。</li>
+  </ol>
+</section>
+
+<section id="caveats">
+  <h2>先に書いておくこと</h2>
+  <ul>
+    <li>声で報告するのは、<strong>あまね に頼んだ作業</strong>の結果です。あなたがターミナルで動かしている Claude Code は、設定を足すと「終わった」「確認を待っている」の 2 つだけを声で知らせます（初めはオフ。作業の中身は読み上げません）。</li>
+    <li>作業をするのは、あまね のフォルダの中の作業フォルダ（workspace）だけです。初めの設定では、Claude Code が確認なしでしてよいのは、ファイルの作成・編集と、フォルダを作る・ファイルを写す・移す・消すといった簡単なファイル操作までです。テストやプログラムの実行、ソフトのインストールなどのコマンドは通りません。作業フォルダの中のファイルは消されることもあるので、大事なファイルは置かないでください。</li>
+    <li>1 つの作業は最長 15 分、同時に 2 つまでです（設定で変えられます）。</li>
+    <li>聞き間違いはあります。周りがうるさいと、呼んでも気づかないことがあります。</li>
+    <li>日本語だけです。PC はつけたままにします。</li>
+    <li>声は PC の中で文字にします。文字になった会話と作業の中身は、返事を考える Anthropic（Claude の会社）に送られます。</li>
+    <li>Claude の料金のルールは Anthropic が決めるもので、変わることがあります。</li>
+  </ul>
+</section>
+
+<section id="requirements">
+  <h2>要るもの</h2>
+  <ul>
+    <li>Windows 10・11（64 ビット）か Mac（macOS 13 以降）</li>
+    <li>メモリ 8GB 以上、空き容量 5GB 以上</li>
+    <li>Claude の有料プラン（Pro 以上）。返事を考えるのにも、作業にも、プランの利用枠を使います</li>
+    <li>マイクとヘッドホン（スピーカーだと、あまね が自分の声を拾うことがあります）</li>
+    <li>Google Chrome か Microsoft Edge、インターネット</li>
+    <li>本体と、声のソフト（AivisSpeech）は無料です</li>
+  </ul>
+</section>
+
+<section id="start">
+  <h2>3 つの始め方</h2>
+
+  <div class="card">
+    <h3>手順書で、迷わず入れる（note・¥2,980）</h3>
+    <p>入れる前の確認（Claude Code のログインと API キー）から、Windows・Mac の手順、声で作業を頼むときの頼み方、利用枠の見方、つまずいたときの直し方まで、1 冊にまとめた手順書です。買う前に読めるところに、要るもの・できないこと・返金の扱いを書いています。</p>
+    <p><a href="https://note.com/aiamane_official/n/nca585ed36287">手順書を読む（note）</a></p>
+  </div>
+
+  <div class="card">
+    <h3>一緒に入れる（導入サポート）</h3>
+    <ul>
+      <li>LINE のトークで、1 回 60 分。</li>
+      <li>第 1 期は 10 件だけの、モニター価格 ¥4,980 です。</li>
+      <li>終わったあとに、導入の感想をお願いします。載せてよいかは、ご本人に確かめてからにします。</li>
+      <li>通話・画面共有・遠隔操作はしません。</li>
+      <li>パスワードや API キーは聞きません。</li>
+    </ul>
+    <p><a href="https://line.me/R/ti/p/@472styfk">LINE で友だち追加して「サポート」と送る</a></p>
+  </div>
+
+  <div class="card">
+    <h3>自分で入れる（GitHub・無料）</h3>
+    <p>本体は GitHub で公開しています。Windows は <code>setup.bat</code>、Mac は <code>setup.command</code> を開くと、足りないソフトを調べて入れ（声のソフトは入れ方を案内します）、起動するところまで進みます。入れ方は無料の記事でも読めます。</p>
+    <ul class="links">
+      <li><a href="https://github.com/ai-amane/ai-amane/releases/latest">GitHub の配布ページ（最新）</a></li>
+      <li><a href="https://github.com/ai-amane/ai-amane">GitHub のリポジトリ</a></li>
+      <li><a href="https://note.com/aiamane_official/n/n398c8a14a11b">入れ方の記事（note・無料）</a></li>
+    </ul>
+  </div>
+
+  <p class="note">かんたんセットアップは、何も入っていない PC で最初から通す試しを、まだ済ませていません。途中で止まったら、README の「自分で 1 つずつ入れる場合」の手順か、導入サポートを使ってください。</p>
+</section>
+
+<section id="safety">
+  <h2>安全の方針</h2>
+  <p>声で頼んだ作業を、自分の PC の AI に実行させるソフトなので、守っていることと、気をつけてほしいことを書いておきます。</p>
+  <h3>守っていること</h3>
+  <ul>
+    <li>あまね のサーバーは、PC の中からしか接続できません。ほかの Web サイトから操作されないよう対策しています。</li>
+    <li>作業は作業フォルダの中だけで行います。Claude Code は、ファイルの編集と簡単なファイル操作だけを確認なしで許し、それ以外のコマンドは通さない設定で始まります。</li>
+    <li>作業を頼む前に、画面に確認を出します。削除や送信などは、実行の前に確かめるようにしています。</li>
+    <li>API キーなどの秘密の値は、ブラウザにも作業担当にも渡しません。作業担当の報告に秘密の値と同じ文字があれば、伏せてから画面に出します。</li>
+    <li>声は PC の中で文字にします（初めの設定）。</li>
+  </ul>
+  <h3>気をつけてほしいこと</h3>
+  <ul>
+    <li>聞き間違いで、思っていない作業が始まることがあります。大事なファイルは作業フォルダに置かないでください。</li>
+    <li>AI が Web 検索で読んだページに悪い指示が書いてあると、それに従って作業を頼んでしまう可能性があります。そのため、作業担当の権限は小さくしてあります。権限を広げる設定は、理由が分かるまで変えないでください。</li>
+    <li>作業担当は、作業フォルダの外のファイルも読めます（書けるのは中だけ）。</li>
+  </ul>
+  <p>くわしくは <a href="https://github.com/ai-amane/ai-amane/blob/main/SECURITY.md">SECURITY.md</a> に書いています。安全の問題を見つけたときは、公開の Issue ではなく、<a href="https://github.com/ai-amane/ai-amane/security/advisories/new">GitHub の Security Advisories</a> から知らせてください。</p>
+</section>
+
+<section id="story">
+  <h2>作った経緯</h2>
+  <p>AIあまね は、個人開発者が、Claude Code を「頭」にして作った音声 AI 秘書です。呼びかけて話すところ、作業を裏の Claude Code に任せて声で報告を受けるところ、画面に資料を出すところを、少しずつ足してきました。</p>
+  <p>本体は MIT ライセンスで GitHub に公開していて、直したことは更新の記録に残しています。作った人は、顔と名前を出していません。連絡は LINE と GitHub の Issue で受けています。</p>
+  <p>動画のキャラクターは AI で作った絵で、声は合成音声です。あまね の画面と返事は、本物をそのまま撮っています。</p>
+</section>
+
+<section id="trust">
+  <h2>数字と声</h2>
+  <div class="card">
+    <h3>GitHub のスター</h3>
+    <p>気に入ったら、<a href="https://github.com/ai-amane/ai-amane/stargazers">GitHub のスターのページ</a>で見られます。</p>
+  </div>
+  <div class="slot">
+    <h3>導入した人の声</h3>
+    <p>第 1 期のモニターの声を、ご本人の許可をもらって載せます。名前は出しません。いまはまだ、載せられる声はありません。</p>
+  </div>
+  <div class="card gap">
+    <h3>更新の記録</h3>
+    <p>直したこと・足したことは、ここに残しています: <a href="https://github.com/ai-amane/ai-amane/blob/main/CHANGELOG.md">CHANGELOG.md</a></p>
+  </div>
+  <div class="card">
+    <h3>書いた記事</h3>
+    <p>仕組みと作り（Zenn・Qiita）、使い方とつまずきの直し方（note・はてなブログ）を書いています。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+  <dl>
+    <dt>Q. 自分のターミナルで動かしている Claude Code も、終わったら知らせてくれますか？</dt>
+    <dd>設定を足すと、「終わった」と「確認を待っている」の 2 つだけを、フォルダの名前つきで声で知らせます（初めはオフ。Claude Code の hooks を使います）。何をしたか・結果までは読み上げません。結果まで声で聞きたい作業は、あまね に声で頼んでください。</dd>
+    <dt>Q. お金はかかりますか？</dt>
+    <dd>本体と、声のソフト（AivisSpeech）は無料です。返事を考えるのと作業に、Claude の有料プラン（Pro 以上）の利用枠を使います。Claude の料金のルールが変わったら、変わることがあります。</dd>
+    <dt>Q. Mac でも使えますか？</dt>
+    <dd>使えます（macOS 13 以降）。Mac のかんたんセットアップは作ったばかりなので、うまくいかないときは README の手順で進めてください。</dd>
+    <dt>Q. スマホだけで使えますか？</dt>
+    <dd>使えません。本体は PC の中で動きます。家の Wi-Fi のタブレットやスマホは、マイクとスピーカーと画面として使えます。</dd>
+    <dt>Q. 話したことは、どこに送られますか？</dt>
+    <dd>声は PC の中で文字にします。文字になった会話は、返事を考える Anthropic に送られます。頼んだ作業の中身も同じです。</dd>
+  </dl>
+</section>
+
+<section id="contact">
+  <h2>連絡先</h2>
+  <ul class="links">
+    <li>質問・導入サポートの相談: <a href="https://line.me/R/ti/p/@472styfk">LINE</a></li>
+    <li>不具合: <a href="https://github.com/ai-amane/ai-amane/issues">GitHub の Issue</a></li>
+  </ul>
+  <h2 class="sub">SNS</h2>
+  <ul class="links">
+    <li><a href="https://www.youtube.com/@ai.amane.official">YouTube</a></li>
+    <li><a href="https://www.instagram.com/ai.amane.official/">Instagram</a></li>
+    <li><a href="https://www.tiktok.com/@ai.amane.official">TikTok</a></li>
+    <li><a href="https://x.com/ai_amane_x">X</a></li>
+    <li><a href="https://note.com/aiamane_official">note</a></li>
+    <li><a href="https://ai-amane.hateblo.jp/">はてなブログ</a></li>
+    <li><a href="https://qiita.com/ai_amane">Qiita</a></li>
+    <li><a href="https://zenn.dev/ai_amane">Zenn</a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>AIあまね は個人の開発です。Anthropic をはじめ、ここに出てくる会社やサービスの公式のものではありません。お金のやりとりは、このページの外（note と LINE）で行います。</p>
+</footer>
+
+</div>
+</body>
+</html>
