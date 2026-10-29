@@ -223,5 +223,19 @@
 </footer>
 
 </div>
+<script>
+// 数を数えるだけ（cookie なし・個人を見分けない）。hits.sh に「ページが開かれた」「どのボタンが押された」の回数だけ送る
+(function () {
+  var base = "https://hits.sh/ai-amane.github.io/";
+  function hit(key) { try { new Image().src = base + key + ".svg?t=" + Date.now(); } catch (e) {} }
+  hit("lp-view");
+  var keys = { "note.com": "lp-note", "line.me": "lp-line", "github.com": "lp-github" };
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("a.btn");
+    if (!a) return;
+    for (var host in keys) if (a.href.indexOf(host) >= 0) { hit(keys[host]); return; }
+  });
+})();
+</script>
 </body>
 </html>
